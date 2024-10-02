@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastria - Federal Democratic Republic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #111;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            display: none; /* Hide all sections initially */
+        }
+        .login-form, .e-citizenship-form {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the Federal Democratic Republic of Mastria</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('login')">Login</a></li>
+        <li><a href="#" onclick="showPage('e-citizenship')">E-Citizenship</a></li>
+        <li><a href="#" onclick="showPage('register-citizenship')">Register Citizenship</a></li>
+        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+        <li><a href="#" onclick="showPage('services')">Services</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to Mastria, a Federal Democratic Republic. Explore our services, apply for e-citizenship, and learn more about our nation.</p>
+    </section>
+
+    <section id="login" class="login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+    </section>
+
+    <section id="e-citizenship" class="e-citizenship-form">
+        <h2>Apply for E-Citizenship</h2>
+        <form id="citizenshipForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="citizenshipId">E-Citizenship ID:</label>
+            <input type="text" id="citizenshipId" name="citizenshipId" required>
+            
+            <input type="submit" value="Apply">
+        </form>
+    </section>
+
+    <section id="register-citizenship">
+        <h2>Register for Citizenship</h2>
+        <p>Please fill out the form below to register for official Mastrian citizenship:</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEXAMPLE/embed"></iframe>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Mastria is a federal democratic republic committed to the values of freedom, justice, and equality for all citizens.</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <p>Explore a variety of services offered by Mastria, including citizen support, legal services, and more.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries or support, please reach out to our administration via email or phone.</p>
+    </section>
+</div>
+
+<script>
+    function showPage(pageId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Show the clicked section
+        const selectedSection = document.getElementById(pageId);
+        selectedSection.style.display = 'block';
+    }
+
+    // Show the Home section by default
+    showPage('home');
+</script>
+
+</body>
+</html>
